@@ -1,8 +1,8 @@
 :root {
-  --primary: #e6f2ff;
-  --secondary: #c8fce4;
-  --tertiary: #b1e8ff;
-  --light: #e4bdf8;
+  --primary: #edd4fa;
+  --secondary: #b7fbdb;
+  --tertiary: #ecf9ff;
+  --light: #fbfbfb;
   --dark: #0d2630;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
@@ -22,24 +22,23 @@ body {
   margin: 0;
   padding: 0;
   font-family: "DotGothic16", serif;
-  font-weight: 400;
+  font-weight: 100;
   line-height: 1.5;
   font-size: 16px;
   color: var(--secondary);
-  background-color: var(--primary);
+  background-color: var(--light);
 }
 
 h1,
-h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: "Codystar", sans-serif;
-  font-weight: 500;
+  font-weight: 100;
   margin: 5px 0;
   line-height: 1.25;
-  color: var(--tertiary);
+  color: var(--secondary);
 }
 
 h1 {
@@ -99,7 +98,8 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: var(--secondary);
+  color: var(--light);
+  background-color: var(--primary);
 }
 
 button:hover {
