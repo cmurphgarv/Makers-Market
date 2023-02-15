@@ -38,12 +38,12 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header />
+          <Nav />
           <div>
             <Routes>
               <Route 
                 path="/"
-                element={<Home />}
+                element={<Homepage />}
               />
               <Route 
                 path="/login"
@@ -60,6 +60,10 @@ function App() {
               <Route 
                 path="/products/:productId"
                 element={<SingleProduct />}
+              />
+              <Route 
+                path="/cart"
+                element={<Cart />}
               />
             </Routes>
           </div>
