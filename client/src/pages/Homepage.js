@@ -19,6 +19,7 @@ const Homepage = () => {
       <h1>Homepage Component</h1>
       {products.map((product) => (
         <div>
+          <img src={`/images/${product.image}`} />
           <li key={product._id}>{product.name}</li>
           <li key={product.name}>{product.description}</li>
         </div>
