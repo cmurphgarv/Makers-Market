@@ -35,7 +35,38 @@ const client = new ApolloClient({
 
 function App() {
   return (
-<div>App</div>
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
+          <Header />
+          <div>
+            <Routes>
+              <Route 
+                path="/"
+                element={<Home />}
+              />
+              <Route 
+                path="/login"
+                element={<Login />}
+              />
+              {/* <Route 
+                path="/me"
+                element={<Profile />}
+              /> */}
+              {/* <Route 
+                path="/profiles/:username"
+                element={<Profile />}
+              /> */}
+              <Route 
+                path="/products/:productId"
+                element={<SingleProduct />}
+              />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 
