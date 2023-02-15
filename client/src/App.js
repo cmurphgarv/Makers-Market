@@ -38,7 +38,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header />
+          <Nav />
           <div>
             <Routes>
               <Route 
@@ -60,6 +60,10 @@ function App() {
               <Route 
                 path="/products/:productId"
                 element={<SingleProduct />}
+              />
+              <Route 
+                path="/cart"
+                element={<Cart />}
               />
             </Routes>
           </div>
