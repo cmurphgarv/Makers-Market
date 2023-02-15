@@ -1,32 +1,28 @@
 :root {
   --primary: #edd4fa;
-  --secondary: #b7fbdb;
-  --tertiary: #ecf9ff;
+  --secondary: #b0e2cb;
+  --tertiary: #acdff7;
   --light: #fbfbfb;
   --dark: #0d2630;
   --error: rgb(228, 46, 1);
-  --spacing-one: calc(1rem * 0.5);
-  --spacing-two: calc(1rem);
 }
 
 * {
   box-sizing: border-box;
 }
 
-html,
 body {
-  min-height: 100%;
-}
-
-body {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   font-family: "DotGothic16", serif;
   font-weight: 100;
   line-height: 1.5;
   font-size: 16px;
-  color: var(--secondary);
-  background-color: var(--light);
+  color: var(--light);
+  background-color: var(--secondary);
+  background-image: url("./assets/images/backgroundimage0.jpg");
 }
 
 h1,
@@ -34,15 +30,17 @@ h3,
 h4,
 h5,
 h6 {
+  display: block;
   font-family: "Codystar", sans-serif;
-  font-weight: 100;
-  margin: 5px 0;
+
+  margin: 0px 0;
   line-height: 1.25;
-  color: var(--secondary);
+  color: var(--light);
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 3rem;
+  padding: 1rem;
 }
 
 h2 {
@@ -51,6 +49,8 @@ h2 {
 
 h3 {
   font-size: 1.75rem;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 h4 {
@@ -77,7 +77,8 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--secondary);
+  cursor: pointer;
 }
 
 header {
@@ -112,15 +113,11 @@ button[disabled] {
 }
 
 img {
-  max-width: 100%;
+  max-width: 70%;
 }
 
 span[role="img"] {
   cursor: default;
-}
-
-form {
-  width: 40%;
 }
 
 input {
@@ -137,69 +134,26 @@ input:focus {
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 
-.container {
-  width: 85%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+.productItem {
+  text-align: center;
+  padding: 1rem;
 }
 
-.flex-row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.space-between {
-  justify-content: space-between;
-}
-
-.flex-end {
-  justify-content: flex-end;
-}
-
-.mx-1 {
-  margin-right: var(--spacing-one);
-  margin-left: var(--spacing-one);
-}
-
-.mx-2 {
-  margin-right: var(--spacing-two);
-  margin-left: var(--spacing-two);
-}
-
-.my-1 {
-  margin-top: var(--spacing-one);
-  margin-bottom: var(--spacing-one);
-}
-
-.my-2 {
-  margin-top: var(--spacing-two);
-  margin-bottom: var(--spacing-two);
-}
-
-.px-1 {
-  padding-right: var(--spacing-one);
-  padding-left: var(--spacing-one);
-}
-
-.px-2 {
-  padding-right: var(--spacing-two);
-  padding-left: var(--spacing-two);
-}
-
-.py-1 {
-  padding-top: var(--spacing-one);
-  padding-bottom: var(--spacing-one);
-}
-
-.py-2 {
-  padding-top: var(--spacing-two);
-  padding-bottom: var(--spacing-two);
+.nav {
+  background-color: var(--secondary);
+  padding: 0;
+  margin-top: 0;
 }
 
 .card {
-  width: 25%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 30%;
 }
 
 .error-text {
@@ -207,7 +161,6 @@ input:focus {
 }
 
 @media screen and (max-width: 768px) {
-  .card {
-    width: 100%;
+  body {
   }
-}
+} ;

@@ -1,7 +1,11 @@
 import React from "react";
 
 const Nav = () => {
-  return <div>Nav Component</div>;
+  return (
+    <div class="nav">
+      <h1>🧶 MAKER'S MARKET</h1>
+    </div>
+  );
 };
 
 export default Nav;
