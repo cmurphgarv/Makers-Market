@@ -26,6 +26,7 @@ body {
 }
 
 h1,
+h2,
 h3,
 h4,
 h5,
@@ -45,6 +46,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  width: 100%;
 }
 
 h3 {
@@ -82,7 +84,6 @@ a:hover {
 }
 
 header {
-  background: var(--tertiary);
 }
 
 header a {
@@ -93,8 +94,9 @@ button {
   font-family: "DotGothic16";
   font-size: 1rem;
   text-decoration: none;
-  padding: 0.25rem 1rem;
-  border-radius: 0.5rem;
+
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
   border: none;
   outline: none;
   cursor: pointer;
@@ -104,6 +106,7 @@ button {
 }
 
 button:hover {
+  cursor: pointer;
   opacity: 0.8;
 }
 
@@ -154,6 +157,20 @@ input:focus {
 
 .container {
   max-width: 30%;
+}
+.sp-description {
+  justify-content: center;
+}
+.sp-title {
+  display: block;
+}
+.sp-container {
+}
+.sp-card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
 }
 
 .error-text {

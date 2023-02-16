@@ -2,6 +2,8 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../utils/queries";
 import ProductItem from "../components/ProductItem";
+import SingleProduct from "./SingleProduct";
+import { Link } from "react-router-dom";
 
 const homePageStyle = {
   background: "",
@@ -25,6 +27,7 @@ const Homepage = () => {
               name={product.name}
               image={product.image}
               price={product.price}
+              _id={product._id}
             />
           </div>
         ))}

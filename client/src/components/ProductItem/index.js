@@ -1,16 +1,13 @@
-const ProductItemStyle = {};
+import { Link } from "react-router-dom";
 
-const ProductItem = ({ name, image, price }) => {
+const ProductItem = ({ name, image, price, _id }) => {
   return (
     <div class="">
       <div class="productItem">
-        <a src="/">
+        <Link to={`/products/${_id}`}>
           <img src={`/images/${image}`} alt={name} />
-
-          <h5>{name}</h5>
-
-          {price}
-        </a>
+          <h5>{name}</h5>${price}
+        </Link>
       </div>
     </div>
   );
