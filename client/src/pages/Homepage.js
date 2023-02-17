@@ -1,5 +1,8 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
+import { ProductsProvider } from "../utils/productsContext";
+import { useContext } from "react";
+import ProductsContext from "../utils/productsContext";
 import { QUERY_ALL_PRODUCTS } from "../utils/queries";
 import ProductItem from "../components/ProductItem";
 import SingleProduct from "./SingleProduct";
@@ -10,6 +13,12 @@ const homePageStyle = {
 };
 
 const Homepage = () => {
+  // const [productList, setProductList] = useContext(ProductsContext);
+
+  // console.log(productList);
+
+  const test = "test message";
+
   const { loading, error, data } = useQuery(QUERY_ALL_PRODUCTS);
   console.log(data);
   const products = data?.products || [];
@@ -18,6 +27,7 @@ const Homepage = () => {
 
   return (
     <div class="" style={homePageStyle}>
+      {/* <ProductsProvider value={test}> */}
       <h3>Products</h3>
       <div class="card">
         <br></br>
@@ -32,6 +42,7 @@ const Homepage = () => {
           </div>
         ))}
       </div>
+      {/* </ProductsProvider> */}
     </div>
   );
 };
