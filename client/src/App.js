@@ -42,7 +42,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [productList, setProductList] = useState(["test", "test", "test"]);
+  const [productList, setProductList] = useState([]);
 
   return (
     <ApolloProvider client={client}>
@@ -54,14 +54,6 @@ function App() {
               <Routes>
                 <Route path="/" element={<Homepage />} />
                 <Route path="/login" element={<Login />} />
-                {/* <Route 
-                path="/me"
-                element={<Profile />}
-              /> */}
-                {/* <Route 
-                path="/profiles/:username"
-                element={<Profile />}
-              /> */}
                 <Route
                   path="/products/:productId"
                   element={<SingleProduct />}

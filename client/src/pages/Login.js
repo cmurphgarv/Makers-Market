@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
 
 import Auth from "../utils/auth";
+import Signup from "./Signup";
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -19,7 +20,7 @@ const Login = () => {
     });
   };
 
-  // submit form
+  // submit form to login
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -29,6 +30,7 @@ const Login = () => {
       });
 
       Auth.login(data.login.token);
+      console.log(Auth.isLoggedIn());
     } catch (e) {
       console.error(e);
     }
@@ -42,7 +44,7 @@ const Login = () => {
 
   return (
     <div>
-      <h3>Login</h3>
+      <h3 class="logintitle">Login</h3>
       {data ? (
         <p>
           Success! You may now head <Link to="/">back to the homepage.</Link>
@@ -51,20 +53,22 @@ const Login = () => {
         <form onSubmit={handleFormSubmit}>
           <input
             className="form-input"
-            placeholder="Your email"
+            placeholder="Email"
             name="email"
             type="email"
             value={formState.email}
             onChange={handleChange}
           />
+          <br></br>
           <input
             className="form-input"
-            placeholder="******"
+            placeholder="Password"
             name="password"
             type="password"
             value={formState.password}
             onChange={handleChange}
           />
+          <br></br>
           <button
             className="loginButton"
             style={{ cursor: "pointer" }}
@@ -76,6 +80,7 @@ const Login = () => {
       )}
 
       {error && <div>{error.message}</div>}
+      <Signup />
     </div>
   );
 };
