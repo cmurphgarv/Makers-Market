@@ -8,34 +8,35 @@ const homePageStyle = {
 };
 
 const Homepage = () => {
-  /* IN PROGRESS CODE BELOW */
-  var defaultProducts = [
-    { name: "test", category: "2D" },
-    { name: "test2", category: "3D" },
-    { name: "test3", category: "Prints" },
-  ];
-  const [categoryList, setCatgory] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState();
-
-  useEffect(() => {
-    setCategory(defaultProducts);
-  }, []);
-
-  function getFilteredList() {}
-
-  /* IN PROGRESS CODE ABOVE */
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const { loading, error, data } = useQuery(QUERY_ALL_PRODUCTS);
   console.log(data);
-  const products = data?.products || [];
+  let products = data?.products || [];
+
+  const onCategoryChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
+
+  const getFilteredProducts = () => {
+    return products.filter((product) => {
+      if (selectedCategory === "") {
+        return true;
+      }
+      return product.category.name === selectedCategory;
+    });
+  };
+
   if (loading) return "Loading...";
   if (error) return `ERORR! ${error.message}`;
+
+  console.log(selectedCategory);
 
   return (
     <div class="categorydiv" style={homePageStyle}>
       {" "}
       <h6>Products by Type:</h6>
-      <select name="categorylist" id="categorylist">
+      <select name="categorylist" id="categorylist" onChange={onCategoryChange}>
         <option value="">All</option>
         <option value="2D">2D</option>
         <option value="3D">3D</option>
@@ -45,7 +46,7 @@ const Homepage = () => {
       <h3>Products</h3>
       <div class="card">
         <br></br>
-        {products.map((product) => (
+        {getFilteredProducts().map((product) => (
           <div class="container" key={product}>
             <ProductItem
               name={product.name}
@@ -56,7 +57,6 @@ const Homepage = () => {
           </div>
         ))}
       </div>
-      {/* </ProductsProvider> */}
     </div>
   );
 };
