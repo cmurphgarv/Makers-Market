@@ -1,7 +1,9 @@
-import React from "react";
+import { React, useState } from "react";
+import { useCartContext } from "../utils/CartContext";
 
 const Cart = () => {
-  return <div>Cart Component</div>;
+  const cart = useCartContext();
+  return <div>{cart}</div>;
 };
 
 export default Cart;
