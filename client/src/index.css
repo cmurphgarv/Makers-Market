@@ -21,7 +21,7 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--light);
-  background-color: var(--secondary);
+  background-color: var(--light);
   background-image: url("./assets/images/backgroundimage0.jpg");
 }
 
@@ -31,7 +31,6 @@ h3,
 h4,
 h5,
 h6 {
-  display: block;
   font-family: "Codystar", sans-serif;
 
   margin: 0px 0;
@@ -40,6 +39,7 @@ h6 {
 }
 
 h1 {
+  display: inline;
   font-size: 3rem;
   padding: 1rem;
 }
@@ -147,7 +147,8 @@ input:focus {
   padding: 0;
   margin-top: 0;
 }
-
+.navlogin {
+}
 .card {
   display: flex;
   justify-content: center;
@@ -163,6 +164,37 @@ input:focus {
 }
 .sp-title {
   display: block;
+}
+#categorylist {
+  font-family: "DotGothic16";
+  font-size: 1rem;
+  text-decoration: none;
+
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0 1px;
+  color: var(--light);
+  background-color: var(--primary);
+}
+form {
+  font-family: "DotGothic16";
+  font-size: 1rem;
+  text-decoration: none;
+
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0 1px;
+  color: var(--light);
+}
+input {
+  font-family: "DotGothic16";
+  font-size: 0.8rem;
 }
 .sp-container {
 }
