@@ -3,7 +3,7 @@ import React, { createContext, useContext } from "react";
 const CartContext = createContext();
 const { Provider } = CartContext;
 
-const CartProvider = ({ value = "TEST HELLO TEST", ...props }) => {
+const CartProvider = ({ value = [], ...props }) => {
     return <Provider value={value} {...props} />;
 };
 
