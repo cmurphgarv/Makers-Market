@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
 
 import Auth from "../utils/auth";
+import Signup from "./Signup";
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -19,7 +20,7 @@ const Login = () => {
     });
   };
 
-  // submit form
+  // submit form to login
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -29,6 +30,7 @@ const Login = () => {
       });
 
       Auth.login(data.login.token);
+      console.log(Auth.isLoggedIn())
     } catch (e) {
       console.error(e);
     }
@@ -76,7 +78,9 @@ const Login = () => {
       )}
 
       {error && <div>{error.message}</div>}
+      <Signup />
     </div>
+    
   );
 };
 
