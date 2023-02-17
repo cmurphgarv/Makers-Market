@@ -6,7 +6,7 @@ import Auth from "../../utils/auth";
 const ProductItem = ({ name, image, price, _id }) => {
   const { productList, setProductList } = useContext(ProductsContext);
 
-  console.log(productList);
+  // console.log(productList);
 
   const handleProductList = () => {
     productList.push(_id);
