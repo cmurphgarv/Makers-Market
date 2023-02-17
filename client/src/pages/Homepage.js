@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../utils/queries";
 import ProductItem from "../components/ProductItem";
@@ -11,6 +11,23 @@ const homePageStyle = {
 };
 
 const Homepage = () => {
+  /* IN PROGRESS CODE BELOW */
+  var defaultProducts = [
+    { name: "test", category: "2D" },
+    { name: "test2", category: "3D" },
+    { name: "test3", category: "Prints" },
+  ];
+  const [categoryList, setCatgory] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState();
+
+  useEffect(() => {
+    setCategory(defaultProducts);
+  }, []);
+
+  function getFilteredList() {}
+
+  /* IN PROGRESS CODE ABOVE */
+
   const { loading, error, data } = useQuery(QUERY_ALL_PRODUCTS);
   console.log(data);
   const products = data?.products || [];
