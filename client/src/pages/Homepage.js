@@ -2,9 +2,6 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../utils/queries";
 import ProductItem from "../components/ProductItem";
-import SingleProduct from "./SingleProduct";
-import { Link } from "react-router-dom";
-import CategoryMenu from "../components/CategoryMenu";
 
 const homePageStyle = {
   background: "",
@@ -42,6 +39,7 @@ const Homepage = () => {
           </div>
         ))}
       </div>
+      {/* </ProductsProvider> */}
     </div>
   );
 };
