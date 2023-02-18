@@ -13,3 +13,20 @@ export const addProductIdToProductList = (productIdArr) => {
     localStorage.removeItem("productList");
   }
 };
+
+export const removeProductIdFromProductList = (productId) => {
+  const savedProductIds = localStorage.getItem("productList")
+    ? JSON.parse(localStorage.getItem("productList"))
+    : null;
+
+  if (!savedProductIds) {
+    return false;
+  }
+
+  const updatedProductIds = savedProductIds?.filter(
+    (savedProductId) => savedProductId !== productId
+  );
+  localStorage.setItem("productList", JSON.stringify(updatedProductIds));
+
+  return true;
+};
