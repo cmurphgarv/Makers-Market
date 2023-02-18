@@ -30,11 +30,11 @@ const SingleProduct = () => {
       </header>
       <br></br>
       <div className="sp-container">
-        <img src={`/images/${imageName}`} />
+        <img src={`/images/${imageName}`} class="spimage" />
 
-        <div className="sp-add/price">
-          <button>Add to Cart</button>
+        <div className="sp-addprice">
           <h3>${product.price}</h3>
+          <button>Add to Cart</button>
         </div>
       </div>
       <div className="sp-right-col">

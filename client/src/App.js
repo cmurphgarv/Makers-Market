@@ -48,20 +48,14 @@ function App() {
     <ApolloProvider client={client}>
       <ProductsProvider value={{ productList, setProductList }}>
         <Router>
-          <div>
-            <Nav />
-            <div>
-              <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/login" element={<Login />} />
-                <Route
-                  path="/products/:productId"
-                  element={<SingleProduct />}
-                />
-                <Route path="/cart" element={<Cart />} />
-              </Routes>
-            </div>
-          </div>
+          <Nav />
+
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/products/:productId" element={<SingleProduct />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
         </Router>
       </ProductsProvider>
     </ApolloProvider>

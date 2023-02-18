@@ -40,61 +40,59 @@ const Signup = () => {
   };
 
   return (
-    <main>
+    <div class="logincard">
       <div>
+        <h4 class="logintitle">Sign Up</h4>
         <div>
-          <h4 class="logintitle">Sign Up</h4>
-          <div>
-            {data ? (
-              <p>
-                Success! You may now head{" "}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  placeholder="First Name"
-                  name="firstName"
-                  type="text"
-                  value={formState.firstName}
-                  onChange={handleChange}
-                />
-                <br></br>
-                <input
-                  placeholder="Last Name"
-                  name="lastName"
-                  type="text"
-                  value={formState.lastName}
-                  onChange={handleChange}
-                />
-                <br></br>
-                <input
-                  placeholder="Email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <br></br>
-                <input
-                  placeholder="Password"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <br></br>
-                <button style={{ cursor: "pointer" }} type="submit">
-                  Submit
-                </button>
-              </form>
-            )}
+          {data ? (
+            <p>
+              Success! You may now head{" "}
+              <Link to="/">back to the homepage.</Link>
+            </p>
+          ) : (
+            <form onSubmit={handleFormSubmit}>
+              <input
+                placeholder="First Name"
+                name="firstName"
+                type="text"
+                value={formState.firstName}
+                onChange={handleChange}
+              />
+              <br></br>
+              <input
+                placeholder="Last Name"
+                name="lastName"
+                type="text"
+                value={formState.lastName}
+                onChange={handleChange}
+              />
+              <br></br>
+              <input
+                placeholder="Email"
+                name="email"
+                type="email"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <br></br>
+              <input
+                placeholder="Password"
+                name="password"
+                type="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <br></br>
+              <button style={{ cursor: "pointer" }} type="submit">
+                Submit
+              </button>
+            </form>
+          )}
 
-            {error && <div>{error.message}</div>}
-          </div>
+          {error && <div>{error.message}</div>}
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 
