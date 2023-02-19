@@ -3,10 +3,6 @@ import { useQuery } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../utils/queries";
 import ProductItem from "../components/ProductItem";
 
-const homePageStyle = {
-  background: "",
-};
-
 const Homepage = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -33,7 +29,7 @@ const Homepage = () => {
   console.log(selectedCategory);
 
   return (
-    <div class="categorydiv" style={homePageStyle}>
+    <div class="categorydiv">
       {" "}
       <h6>Products by Type:</h6>
       <select name="categorylist" id="categorylist" onChange={onCategoryChange}>
