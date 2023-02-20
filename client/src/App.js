@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,6 +8,12 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //import './App.css';
+
+import { ProductsProvider } from "./utils/productsContext";
+import {
+  getSavedProductList,
+  addProductIdToProductList,
+} from "./utils/localStorage";
 
 import Nav from "./components/Nav";
 import Cart from "./pages/Cart";
@@ -40,29 +46,26 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [productList, setProductList] = useState(getSavedProductList());
+
+  useEffect(() => {
+    addProductIdToProductList(productList);
+  });
+
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <div>
+      <ProductsProvider value={{ productList: productList, setProductList }}>
+        <Router>
           <Nav />
-          <div>
-            <Routes>
-              <Route path="/" element={<Homepage />} />
-              <Route path="/login" element={<Login />} />
-              {/* <Route 
-                path="/me"
-                element={<Profile />}
-              /> */}
-              {/* <Route 
-                path="/profiles/:username"
-                element={<Profile />}
-              /> */}
-              <Route path="/products/:productId" element={<SingleProduct />} />
-              <Route path="/cart" element={<Cart />} />
-            </Routes>
-          </div>
-        </div>
-      </Router>
+
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/products/:productId" element={<SingleProduct />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </Router>
+      </ProductsProvider>
     </ApolloProvider>
   );
 }

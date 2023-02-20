@@ -13,6 +13,10 @@ const resolvers = {
       return await Product.findOne({ _id: productId }).populate("category");
     },
 
+    productByCategory: async (parent, { categoryId }) => {
+      return await Product.find({ category: categoryId });
+    },
+
     categories: async () => {
       return await Category.find({});
     },

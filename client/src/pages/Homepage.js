@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../utils/queries";
 import ProductItem from "../components/ProductItem";
 import SingleProduct from "./SingleProduct";
 import { Link } from "react-router-dom";
-import { useCartContext } from "../utils/CartContext";
 
 const homePageStyle = {
   background: "",
@@ -12,23 +11,46 @@ const homePageStyle = {
 
 const Homepage = () => {
 
-  const addToCart = (product) => {
-    const [ cart, setCart ] = useCartContext();
-    setCart(cart.push(product));
-  
-  };
+const Homepage = () => {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   const { loading, error, data } = useQuery(QUERY_ALL_PRODUCTS);
   console.log(data);
-  const products = data?.products || [];
+  let products = data?.products || [];
+
+  const onCategoryChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
+
+  const getFilteredProducts = () => {
+    return products.filter((product) => {
+      if (selectedCategory === "") {
+        return true;
+      }
+      return product.category.name === selectedCategory;
+    });
+  };
+
   if (loading) return "Loading...";
   if (error) return `ERROR! ${error.message}`;
 
+  console.log(selectedCategory);
+
   return (
-    <div class="" style={homePageStyle}>
+    <div class="categorydiv">
+      {" "}
+      <h6>Products by Type:</h6>
+      <select name="categorylist" id="categorylist" onChange={onCategoryChange}>
+        <option value="">All</option>
+        <option value="2D">2D</option>
+        <option value="3D">3D</option>
+        <option value="Jewelry">Jewelry</option>
+        <option value="Misc">Misc</option>
+      </select>
       <h3>Products</h3>
       <div class="card">
         <br></br>
-        {products.map((product) => (
+        {getFilteredProducts().map((product) => (
           <div class="container" key={product}>
             <ProductItem
               name={product.name}
@@ -42,6 +64,6 @@ const Homepage = () => {
       </div>
     </div>
   );
-};
+}};
 
 export default Homepage;
