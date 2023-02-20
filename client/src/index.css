@@ -17,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "DotGothic16", serif;
-  font-weight: 100;
+
   line-height: 1.5;
   font-size: 16px;
   color: var(--light);
@@ -72,7 +72,7 @@ p {
 }
 
 a {
-  color: var(--tertiary);
+  color: var(--secondary);
   text-decoration: none;
   font-weight: bold;
 }
@@ -143,18 +143,24 @@ input:focus {
 }
 
 .nav {
-  background-color: var(--secondary);
+  display: flex;
   padding: 0.2rem;
-  width: 100vmax;
+  float: inline-end;
+  background-color: rgba(176, 226, 203, 0.8);
 }
 .navlogo {
   display: flex;
+  margin: 2rem;
 }
-.navlogin {
+.navlogin,
+.navlogin li {
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: right;
 }
 .navcard {
+  background-image: url("./assets/images/backgroundimagenav.jpg");
+  width: 99vmax;
 }
 .logincard {
   display: block;
@@ -169,7 +175,6 @@ input:focus {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
   margin: 0;
   padding: 0;
 }
@@ -200,7 +205,6 @@ input:focus {
   font-family: "DotGothic16";
   font-size: 1rem;
   text-decoration: none;
-
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
   border: none;
@@ -209,6 +213,27 @@ input:focus {
   margin: 0 1px;
   color: var(--light);
   background-color: var(--primary);
+}
+.categorydiv {
+  padding: 1rem;
+}
+.cart img {
+  max-width: 10vw;
+}
+.cartdiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.cart button {
+  margin-bottom: 2rem;
+}
+.cart {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
 }
 form {
   font-family: "DotGothic16";
