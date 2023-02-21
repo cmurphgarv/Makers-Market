@@ -34,15 +34,20 @@ const Cart = () => {
   if (loading) return "Loading...";
 
   return (
-    <div>
+    <div class="cart">
       {getCartProducts().length ? (
         getCartProducts().map((product) => (
-          <div>
+          <div class="cartdiv">
             <img src={`/images/${product.image}`} />
-            <p>{product.name}</p>
-            <button onClick={() => handleRemoveProduct(product._id)}>
-              Remove from Cart
-            </button>
+            <br></br>
+            <p>
+              {" "}
+              {product.name}
+              <br></br>
+              <button onClick={() => handleRemoveProduct(product._id)}>
+                Remove from Cart
+              </button>
+            </p>
           </div>
         ))
       ) : (

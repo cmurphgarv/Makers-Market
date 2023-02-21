@@ -10,6 +10,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  overflow-y: scroll;
+}
 
 body {
   display: flex;
@@ -17,7 +20,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "DotGothic16", serif;
-  font-weight: 100;
+
   line-height: 1.5;
   font-size: 16px;
   color: var(--light);
@@ -39,46 +42,47 @@ h6 {
 
 h1 {
   display: inline;
-  font-size: 3rem;
+  font-size: 4vmax;
 }
 
 h2 {
   font-size: 2rem;
+  margin-bottom: 2vmax;
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 2.5vmax;
   text-align: center;
   margin-top: 1rem;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.5vmax;
 }
 
 h5 {
   margin: 0;
   padding: 0;
-  font-size: 1.25rem;
+  font-size: 1.2vmax;
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: 1.2vmax;
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1vmax;
   margin-top: 0;
 }
 
 a {
-  color: var(--tertiary);
+  color: var(--secondary);
   text-decoration: none;
   font-weight: bold;
 }
 
 a:hover {
-  color: var(--secondary);
+  color: var(--tertiary);
   cursor: pointer;
 }
 
@@ -91,15 +95,15 @@ header a {
 
 button {
   font-family: "DotGothic16";
-  font-size: 1rem;
+  font-size: 1vmax;
   text-decoration: none;
-
+  margin-bottom: 2vmax;
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 1px;
+
   color: var(--light);
   background-color: var(--primary);
 }
@@ -140,21 +144,30 @@ input:focus {
 .productItem {
   text-align: center;
   padding: 0.5rem;
+  max-width: 20vmax;
+}
+.productItem img {
 }
 
 .nav {
-  background-color: var(--secondary);
+  display: flex;
   padding: 0.2rem;
-  width: 100vmax;
+  float: inline-end;
+  background-color: rgba(176, 226, 203, 0.8);
 }
 .navlogo {
   display: flex;
+  margin: 2rem;
 }
-.navlogin {
+.navlogin,
+.navlogin li {
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: right;
 }
 .navcard {
+  background-image: url("./assets/images/backgroundimagenav.jpg");
+  width: 99vmax;
 }
 .logincard {
   display: block;
@@ -169,7 +182,6 @@ input:focus {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
   margin: 0;
   padding: 0;
 }
@@ -178,18 +190,21 @@ input:focus {
   max-width: 18%;
 }
 .sp-description {
+  margin-left: 2vmax;
   justify-content: center;
   align-items: center;
 }
 .sp-title {
   display: block;
+  margin-right: 2vmax;
 }
 .sp-card {
 }
 .sp-container {
 }
 .spimage {
-  max-width: 70vh;
+  max-width: 60vh;
+  display: block;
 }
 .sp-addprice {
   display: inline-block;
@@ -198,9 +213,8 @@ input:focus {
 }
 #categorylist {
   font-family: "DotGothic16";
-  font-size: 1rem;
+  font-size: 1vmax;
   text-decoration: none;
-
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
   border: none;
@@ -209,6 +223,28 @@ input:focus {
   margin: 0 1px;
   color: var(--light);
   background-color: var(--primary);
+}
+.categorydiv {
+  padding: 1rem;
+}
+.cart img {
+  max-width: 20vw;
+  padding: 1vmax;
+}
+.cartdiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.cartdiv p {
+  display: block;
+}
+.cart {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
 }
 form {
   font-family: "DotGothic16";
@@ -238,6 +274,22 @@ form {
 }
 
 @media screen and (max-width: 768px) {
-  body {
+  h1 {
+    font-size: 6vmax;
+  }
+  h5 {
+    font-size: 3.5vmax;
+  }
+  h6 {
+    font-size: 3vmax;
+  }
+  .productItem img {
+    max-width: 15vmax;
+  }
+  .productItem h5 {
+    font-size: 2vmax;
+  }
+  .cartdiv img {
+    min-width: 20vmax;
   }
 } ;

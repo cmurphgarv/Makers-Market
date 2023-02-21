@@ -38,7 +38,7 @@ const SingleProduct = () => {
         </div>
       </div>
       <div className="sp-right-col">
-        <p className="sp-description">{product.description}</p>
+        <p className="sp-description"> {product.description}</p>
       </div>
     </div>
   );

@@ -29,16 +29,22 @@ const Homepage = () => {
   console.log(selectedCategory);
 
   return (
-    <div class="categorydiv">
-      {" "}
-      <h6>Products by Type:</h6>
-      <select name="categorylist" id="categorylist" onChange={onCategoryChange}>
-        <option value="">All</option>
-        <option value="2D">2D</option>
-        <option value="3D">3D</option>
-        <option value="Jewelry">Jewelry</option>
-        <option value="Misc">Misc</option>
-      </select>
+    <div>
+      <div class="categorydiv">
+        {" "}
+        <h6>Products by Type:</h6>
+        <select
+          name="categorylist"
+          id="categorylist"
+          onChange={onCategoryChange}
+        >
+          <option value="">All</option>
+          <option value="2D">2D</option>
+          <option value="3D">3D</option>
+          <option value="Jewelry">Jewelry</option>
+          <option value="Misc">Misc</option>
+        </select>
+      </div>
       <h3>Products</h3>
       <div class="card">
         <br></br>

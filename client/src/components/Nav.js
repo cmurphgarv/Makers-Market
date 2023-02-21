@@ -8,13 +8,22 @@ const Nav = () => {
         <div class="navlogo">
           <Link to={`/`}>
             {" "}
-            <h1>🧶 MAKER'S MARKET</h1>{" "}
+            <h1>🧶 MIDWEST MAKER'S MARKET</h1>{" "}
           </Link>
         </div>
         <div class="navlogin">
-          <Link to={`/login`}>
-            <h5>Login/Signup </h5>
-          </Link>
+          <ul>
+            <li>
+              <Link to={`/login`}>
+                <h5>Login/Signup </h5>
+              </Link>
+            </li>
+            <li>
+              <Link to={`/cart`}>
+                <h5>View Cart</h5>
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
