@@ -11,6 +11,14 @@ const ProductItem = ({ name, image, price, _id }) => {
   const handleProductList = () => {
     setProductList([...productList, _id]);
   };
+  
+  let cartButton;
+
+  if (Auth.loggedIn()) {
+    cartButton = <button onClick={handleProductList}>Add to Cart</button>
+  } else {
+    cartButton = <p>Login to Add to Cart</p>
+  }
 
   return (
     <div className="">
@@ -21,7 +29,7 @@ const ProductItem = ({ name, image, price, _id }) => {
           <p>${price}</p>
         </Link>
         {/* {Auth.loggedIn() && <button>Add to Cart</button>} */}
-        <button onClick={handleProductList}>Add to Cart</button>
+        {cartButton}
       </div>
     </div>
   );
