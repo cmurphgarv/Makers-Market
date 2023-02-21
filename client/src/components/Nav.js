@@ -1,5 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Auth from "../utils/auth";
+
+let loginButton;
+
+if (Auth.loggedIn()) {
+  loginButton = (
+    <Link to={`/`}>
+      <h5>Logout </h5>
+    </Link>
+  );
+} else {
+  loginButton = (
+    <Link to={`/login`}>
+      <h5>Login/Signup </h5>
+    </Link>
+  );
+}
 
 const Nav = () => {
   return (
@@ -13,11 +30,7 @@ const Nav = () => {
         </div>
         <div class="navlogin">
           <ul>
-            <li>
-              <Link to={`/login`}>
-                <h5>Login/Signup </h5>
-              </Link>
-            </li>
+            <li>{loginButton}</li>
             <li>
               <Link to={`/cart`}>
                 <h5>View Cart</h5>
