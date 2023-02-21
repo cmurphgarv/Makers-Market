@@ -39,10 +39,15 @@ const Cart = () => {
         getCartProducts().map((product) => (
           <div class="cartdiv">
             <img src={`/images/${product.image}`} />
-            <p>{product.name}</p>
-            <button onClick={() => handleRemoveProduct(product._id)}>
-              Remove from Cart
-            </button>
+            <br></br>
+            <p>
+              {" "}
+              {product.name}
+              <br></br>
+              <button onClick={() => handleRemoveProduct(product._id)}>
+                Remove from Cart
+              </button>
+            </p>
           </div>
         ))
       ) : (

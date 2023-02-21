@@ -8,7 +8,7 @@ const Nav = () => {
         <div class="navlogo">
           <Link to={`/`}>
             {" "}
-            <h1>🧶 MAKER'S MARKET</h1>{" "}
+            <h1>🧶 MIDWEST MAKER'S MARKET</h1>{" "}
           </Link>
         </div>
         <div class="navlogin">

@@ -10,6 +10,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  overflow-y: scroll;
+}
 
 body {
   display: flex;
@@ -39,15 +42,16 @@ h6 {
 
 h1 {
   display: inline;
-  font-size: 3rem;
+  font-size: 4vmax;
 }
 
 h2 {
   font-size: 2rem;
+  margin-bottom: 2vmax;
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 2.5vmax;
   text-align: center;
   margin-top: 1rem;
 }
@@ -59,15 +63,15 @@ h4 {
 h5 {
   margin: 0;
   padding: 0;
-  font-size: 1.25rem;
+  font-size: 1.2vmax;
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: 1.2vmax;
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1vmax;
   margin-top: 0;
 }
 
@@ -91,15 +95,15 @@ header a {
 
 button {
   font-family: "DotGothic16";
-  font-size: 1rem;
+  font-size: 1vmax;
   text-decoration: none;
-
+  margin-bottom: 2vmax;
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 1px;
+
   color: var(--light);
   background-color: var(--primary);
 }
@@ -140,6 +144,9 @@ input:focus {
 .productItem {
   text-align: center;
   padding: 0.5rem;
+  max-width: 20vmax;
+}
+.productItem img {
 }
 
 .nav {
@@ -183,18 +190,21 @@ input:focus {
   max-width: 18%;
 }
 .sp-description {
+  margin-left: 2vmax;
   justify-content: center;
   align-items: center;
 }
 .sp-title {
   display: block;
+  margin-right: 2vmax;
 }
 .sp-card {
 }
 .sp-container {
 }
 .spimage {
-  max-width: 70vh;
+  max-width: 60vh;
+  display: block;
 }
 .sp-addprice {
   display: inline-block;
@@ -203,7 +213,7 @@ input:focus {
 }
 #categorylist {
   font-family: "DotGothic16";
-  font-size: 1rem;
+  font-size: 1vmax;
   text-decoration: none;
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
@@ -218,7 +228,8 @@ input:focus {
   padding: 1rem;
 }
 .cart img {
-  max-width: 10vw;
+  max-width: 20vw;
+  padding: 1vmax;
 }
 .cartdiv {
   display: flex;
@@ -226,8 +237,8 @@ input:focus {
   justify-content: center;
   padding: 1rem;
 }
-.cart button {
-  margin-bottom: 2rem;
+.cartdiv p {
+  display: block;
 }
 .cart {
   display: block;
@@ -263,6 +274,22 @@ form {
 }
 
 @media screen and (max-width: 768px) {
-  body {
+  h1 {
+    font-size: 6vmax;
+  }
+  h5 {
+    font-size: 3.5vmax;
+  }
+  h6 {
+    font-size: 3vmax;
+  }
+  .productItem img {
+    max-width: 15vmax;
+  }
+  .productItem h5 {
+    font-size: 2vmax;
+  }
+  .cartdiv img {
+    min-width: 20vmax;
   }
 } ;
