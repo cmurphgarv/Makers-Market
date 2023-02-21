@@ -12,6 +12,10 @@
 }
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
+}
+div {
+  max-width: 100vw;
 }
 
 body {
@@ -35,7 +39,7 @@ h4,
 h5,
 h6 {
   font-family: "Codystar", sans-serif;
-  margin: 0px 0;
+  margin: 0px;
   line-height: 1.25;
   color: var(--light);
 }
@@ -143,7 +147,7 @@ input:focus {
 
 .productItem {
   text-align: center;
-  padding: 0.5rem;
+  padding: 0;
   max-width: 20vmax;
 }
 .productItem img {
@@ -151,13 +155,14 @@ input:focus {
 
 .nav {
   display: flex;
-  padding: 0.2rem;
+  padding: 1vmax;
   float: inline-end;
   background-color: rgba(176, 226, 203, 0.8);
+  width: 100vw;
 }
 .navlogo {
   display: flex;
-  margin: 2rem;
+  margin: 2vmax;
 }
 .navlogin,
 .navlogin li {
@@ -167,7 +172,7 @@ input:focus {
 }
 .navcard {
   background-image: url("./assets/images/backgroundimagenav.jpg");
-  width: 99vmax;
+  width: 100vw;
 }
 .logincard {
   display: block;
@@ -184,6 +189,7 @@ input:focus {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  width: 100vmax;
 }
 
 .container {
