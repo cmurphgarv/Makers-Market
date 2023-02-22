@@ -16,7 +16,8 @@ const OrderHistory = () => {
   // about the Order and maps out each product
 
   return (
-    <div>
+    <div class="historyTitle">
+      <h3>Order History</h3>
       {orders.length ? (
         orders.map((order) => <Order order={order} />)
       ) : (

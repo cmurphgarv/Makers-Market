@@ -1,18 +1,27 @@
 import React from "react";
 
 const Order = ({ order }) => {
+  let date1 = order.purchaseDate;
+  let date2 = new Date(+date1);
+  console.log(date2);
+
   return (
-    <div>
-      <h2>Purchase ID: {order._id}</h2>
-      <h2>Purchase Date: {order.purchaseDate}</h2>
+    <div class="historyDiv">
+      <h4>
+        Purchase ID:<br></br> {order._id}
+      </h4>
+
+      <h4>
+        Purchase Date:<br></br> {order.purchaseDate}
+      </h4>
       {order.products.map((product) => (
-        <div class="cartdiv">
+        <div>
           <img src={`/images/${product.image}`} />
           <br></br>
           <p>
             {" "}
             {product.name}
-            <br></br>
+            <br></br>${product.price}
           </p>
         </div>
       ))}

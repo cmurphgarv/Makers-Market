@@ -1,6 +1,6 @@
 :root {
   --primary: #edd4fa;
-  --secondary: #b0e2cb;
+  --secondary: #98ceb5;
   --tertiary: #acdff7;
   --light: #fbfbfb;
   --dark: #0d2630;
@@ -13,6 +13,7 @@
 html {
   overflow-y: scroll;
   overflow-x: hidden;
+  text-shadow: var(--dark) 1px 1px;
 }
 div {
   max-width: 100vw;
@@ -81,6 +82,7 @@ h6 {
 p {
   font-size: 1.2vmax;
   margin-top: 0;
+  text-shadow: var(--dark) 1px 1px;
 }
 
 a {
@@ -149,10 +151,16 @@ input {
   outline: none;
   border-radius: 3px;
   transition: box-shadow 0.2s;
+  background-color: var(--secondary);
+  color: var(--light);
+}
+::placeholder {
+  color: var(--light);
 }
 
 input:focus {
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--primary);
+  background-color: var(--secondary);
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 
@@ -277,13 +285,29 @@ form {
   color: var(--light);
 }
 
-.sp-container {
-}
 .sp-card {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   padding: 1rem;
+}
+
+.historyDiv img {
+  max-height: 10vmax;
+}
+.historyDiv h4 {
+  margin: 2vmax;
+}
+.historyDiv {
+  margin-top: 2vmax;
+  display: flex;
+  max-width: 90%;
+}
+.historyDiv p {
+  font-size: 0.8vmax;
+}
+.historyTitle {
+  margin-top: 2vmax;
 }
 
 .error-text {

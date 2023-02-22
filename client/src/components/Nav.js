@@ -9,18 +9,14 @@ let historyButton;
 
 let cartView;
 // console.log(getSavedProductList());
-if (getSavedProductList().length > 0) {
+if (Auth.loggedIn() && getSavedProductList().length > 0) {
   cartView = (
     <Link to={`/cart`}>
       <h5>View Cart({getSavedProductList().length})</h5>
     </Link>
   );
 } else {
-  cartView = (
-    <Link to={`/cart`}>
-      <h5>View Cart</h5>
-    </Link>
-  );
+  cartView = "";
 }
 
 const handleLogOut = () => {
