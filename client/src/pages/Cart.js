@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import {
   getSavedProductList,
   removeProductIdFromProductList,
+  clearProductList,
 } from "../utils/localStorage";
 import ProductsContext from "../utils/productsContext";
 
@@ -30,20 +31,21 @@ const Cart = () => {
     setProductList(getSavedProductList());
   };
 
-  function Checkout() {
+  const checkout = () => {
+    clearProductList();
     let delay = 1000;
     setTimeout(function () {
       window.location.href = "/";
     }, delay);
     alert("Thanks for your order! You will be contacted by email shortly.");
-  }
+  };
 
   if (loading) return "Loading...";
 
   return (
     <div class="cart">
       <div class="checkoutButton">
-        <button class="checkoutButton" onClick={Checkout}>
+        <button class="checkoutButton" onClick={checkout}>
           Ready to Checkout
         </button>
       </div>
