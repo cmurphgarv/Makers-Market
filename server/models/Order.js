@@ -4,8 +4,8 @@ const { Schema } = mongoose;
 
 const orderSchema = new Schema({
   purchaseDate: {
-    type: Date,
-    default: Date.now,
+    type: String,
+    default: new Date().toDateString(),
   },
   products: [
     {
