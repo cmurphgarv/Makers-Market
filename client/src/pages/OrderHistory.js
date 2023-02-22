@@ -1,54 +1,29 @@
-import React, { useEffect, useContext } from "react";
-import ProductsContext from "../utils/productsContext";
-import { getSavedProductList } from "../utils/localStorage";
-import { QUERY_ALL_PRODUCTS, QUERY_USER } from "../utils/queries";
+import React from "react";
+import { QUERY_USER } from "../utils/queries";
 import { useQuery } from "@apollo/client";
+import Order from "../components/Order";
 
 const OrderHistory = () => {
-  // const { productList, setProductList } = useContext(ProductsContext);
-
-  // const { loading, error, data } = useQuery(QUERY_ALL_PRODUCTS);
-  // const products = data?.products || [];
-
   const { loading, error, data } = useQuery(QUERY_USER);
-  const user = data?.user || [];
-  console.log(user.orders);
+  console.log(data);
 
-  // const getOrderHistory = () => {
-  //   return products.filter((product) => {
-  //     return productList.includes(product._id);
-  //   });
-  // };
+  let orders = data?.user.orders || [];
+  console.log(orders);
 
-  // useEffect(() => {
-  //   setProductList(getSavedProductList());
-  // }, []);
+  // **NOTE**
+  // each user has an array of orders; we map the orders and pass the singular
+  // order as a prop to the Order component. The Order component displays information
+  // about the Order and maps out each product
 
   return (
     <div>
-      {user.orders.length ? (
-        user.orders.map((product) => (
-          <div class="cartdiv">
-            <img src={`/images/${product.image}`} />
-            <br></br>
-            <p>
-              {" "}
-              {product.name}
-              <br></br>
-            </p>
-          </div>
-        ))
+      {orders.length ? (
+        orders.map((order) => <Order order={order} />)
       ) : (
-        <p>No Items in Cart</p>
+        <p>No Order History!</p>
       )}
     </div>
   );
-
-  // if (loading) return <h1>Loading...</h1>;
-
-  // if (error) return <h1>ERROR! {error.message}</h1>;
-
-  // return <div>{user}</div>;
 };
 
 export default OrderHistory;
