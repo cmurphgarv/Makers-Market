@@ -59,12 +59,6 @@ if (Auth.loggedIn()) {
   historyButton = "";
 }
 
-if (getSavedProductList().length > 0) {
-  cartView = `View Cart(${getSavedProductList().length})`;
-} else {
-  cartView = "View Cart";
-}
-
 const Nav = () => {
   return (
     <div class="navcard">
