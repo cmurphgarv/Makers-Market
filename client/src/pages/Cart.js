@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../utils/queries";
+import { Link } from "react-router-dom";
 import {
   getSavedProductList,
   removeProductIdFromProductList,
@@ -30,6 +31,10 @@ const Cart = () => {
   };
 
   function Checkout() {
+    let delay = 1000;
+    setTimeout(function () {
+      window.location.href = "/";
+    }, delay);
     alert("Thanks for your order! You will be contacted by email shortly.");
   }
 
