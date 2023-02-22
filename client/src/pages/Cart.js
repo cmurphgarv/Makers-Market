@@ -67,11 +67,7 @@ const Cart = () => {
   }
   return (
     <div class="cart">
-      <div class="checkoutButton">
-        <button class="checkoutButton" onClick={() => checkout(productList)}>
-          Ready to Checkout
-        </button>
-      </div>
+      <div class="checkoutButton">{checkoutb}</div>
       {getCartProducts().length ? (
         getCartProducts().map((product) => (
           <div class="cartdiv">
@@ -80,6 +76,7 @@ const Cart = () => {
             <p>
               {" "}
               {product.name}
+              <br></br>${product.price}
               <br></br>
               <button onClick={() => handleRemoveProduct(product._id)}>
                 Remove from Cart
