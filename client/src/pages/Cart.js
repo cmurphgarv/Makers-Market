@@ -38,7 +38,7 @@ const Cart = () => {
     try {
       console.log(productList);
       await addOrder({
-        variables: { productList },
+        variables: { products: productList },
       });
       console.log(data.addOrder);
     } catch (error) {
