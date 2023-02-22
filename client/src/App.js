@@ -21,6 +21,7 @@ import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import SingleProduct from "./pages/SingleProduct";
 import Logout from "./pages/Logout";
+import OrderHistory from "./pages/OrderHistory";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -65,6 +66,7 @@ function App() {
             {/* <Route path="/logout" element={<Logout />} /> */}
             <Route path="/products/:productId" element={<SingleProduct />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/history" element={<OrderHistory />} />
           </Routes>
         </Router>
       </ProductsProvider>
