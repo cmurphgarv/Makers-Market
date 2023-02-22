@@ -75,7 +75,7 @@ h6 {
 }
 
 p {
-  font-size: 1vmax;
+  font-size: 1.2vmax;
   margin-top: 0;
 }
 
@@ -99,7 +99,7 @@ header a {
 
 button {
   font-family: "DotGothic16";
-  font-size: 1vmax;
+  font-size: 1.2vmax;
   text-decoration: none;
   margin-bottom: 2vmax;
   padding: 0.5rem 1.5rem;
@@ -120,6 +120,13 @@ button:hover {
 button[disabled] {
   cursor: default;
   opacity: 0.8;
+}
+.checkoutButton,
+.checkoutButton div {
+  font-size: 2vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img {

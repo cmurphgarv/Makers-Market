@@ -31,10 +31,19 @@ const Cart = () => {
     setProductList(getSavedProductList());
   };
 
+  function Checkout() {
+    alert("Thanks for your order! You will be contacted by email shortly.");
+  }
+
   if (loading) return "Loading...";
 
   return (
     <div class="cart">
+      <div class="checkoutButton">
+        <button class="checkoutButton" onClick={Checkout}>
+          Ready to Checkout
+        </button>
+      </div>
       {getCartProducts().length ? (
         getCartProducts().map((product) => (
           <div class="cartdiv">
