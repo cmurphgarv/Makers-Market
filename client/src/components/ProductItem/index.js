@@ -12,6 +12,7 @@ const ProductItem = ({ name, image, price, _id }) => {
   const handleProductList = () => {
     setProductList([...productList, _id]);
     setButtonText("Added To Your Cart!");
+    window.location.reload();
   };
 
   let cartButton;
