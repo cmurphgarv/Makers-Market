@@ -7,6 +7,22 @@ let loginButton;
 let cartButton;
 let historyButton;
 
+let cartView;
+// console.log(getSavedProductList());
+if (getSavedProductList().length > 0) {
+  cartView = (
+    <Link to={`/cart`}>
+      <h5>View Cart({getSavedProductList().length})</h5>
+    </Link>
+  );
+} else {
+  cartView = (
+    <Link to={`/cart`}>
+      <h5>View Cart</h5>
+    </Link>
+  );
+}
+
 const handleLogOut = () => {
   Auth.logout();
 };
@@ -36,21 +52,12 @@ if (Auth.loggedIn()) {
 if (Auth.loggedIn()) {
   historyButton = (
     <Link to={`/history`}>
-      <h5>View Order Histroy</h5>
+      <h5>Order History</h5>
     </Link>
   );
 } else {
   historyButton = "";
 }
-
-let cartView;
-// console.log(getSavedProductList());
-
-    if(getSavedProductList().length > 0) {
-      cartView = `View Cart(${getSavedProductList().length})`
-    } else {
-      cartView = "View Cart"
-    }
 
 const Nav = () => {
   return (
@@ -64,8 +71,8 @@ const Nav = () => {
         </div>
         <div class="navlogin">
           <ul>
+            <li>{cartView}</li>
             <li>{historyButton}</li>
-            <li>{cartButton}</li>
             <li>{loginButton}</li>
           </ul>
         </div>

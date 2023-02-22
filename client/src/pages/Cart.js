@@ -32,6 +32,7 @@ const Cart = () => {
     console.log(productId);
     removeProductIdFromProductList(productId);
     setProductList(getSavedProductList());
+    window.location.reload();
   };
 
   const checkout = async (productList) => {
@@ -54,7 +55,16 @@ const Cart = () => {
   };
 
   if (loading) return "Loading...";
-
+  let checkoutb;
+  if (getSavedProductList().length > 0) {
+    checkoutb = (
+      <button class="checkoutButton" onClick={() => checkout(productList)}>
+        Ready to Checkout
+      </button>
+    );
+  } else {
+    checkoutb = "";
+  }
   return (
     <div class="cart">
       <div class="checkoutButton">
