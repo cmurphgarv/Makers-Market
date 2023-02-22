@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../utils/queries";
+import { ADD_ORDER } from "../utils/mutations";
 import { Link } from "react-router-dom";
 import {
   getSavedProductList,
@@ -14,6 +15,8 @@ const Cart = () => {
 
   const { loading, error, data } = useQuery(QUERY_ALL_PRODUCTS);
   const products = data?.products || [];
+
+  const [addOrder, { orderError, orderData }] = useMutation(ADD_ORDER);
 
   const getCartProducts = () => {
     return products.filter((product) => {
@@ -31,7 +34,17 @@ const Cart = () => {
     setProductList(getSavedProductList());
   };
 
-  const checkout = () => {
+  const checkout = async (productList) => {
+    try {
+      console.log(productList);
+      await addOrder({
+        variables: { productList },
+      });
+      console.log(data.addOrder);
+    } catch (error) {
+      console.log(error);
+    }
+
     clearProductList();
     let delay = 1000;
     setTimeout(function () {
@@ -45,7 +58,7 @@ const Cart = () => {
   return (
     <div class="cart">
       <div class="checkoutButton">
-        <button class="checkoutButton" onClick={checkout}>
+        <button class="checkoutButton" onClick={() => checkout(productList)}>
           Ready to Checkout
         </button>
       </div>

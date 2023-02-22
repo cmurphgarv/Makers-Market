@@ -62,7 +62,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={<Logout />} />
+            {/* <Route path="/logout" element={<Logout />} /> */}
             <Route path="/products/:productId" element={<SingleProduct />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
