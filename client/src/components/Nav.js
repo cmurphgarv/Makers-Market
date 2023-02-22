@@ -59,6 +59,15 @@ if (Auth.loggedIn()) {
   historyButton = "";
 }
 
+let cartView;
+// console.log(getSavedProductList());
+
+    if(getSavedProductList().length > 0) {
+      cartView = `View Cart(${getSavedProductList().length})`
+    } else {
+      cartView = "View Cart"
+    }
+
 const Nav = () => {
   return (
     <div class="navcard">
