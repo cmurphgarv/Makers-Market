@@ -1,7 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { Category, Order, Product, User } = require("../models");
 const { signToken } = require("../utils/auth");
-const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
@@ -27,6 +26,8 @@ const resolvers = {
           path: "orders.products",
           populate: "category",
         });
+
+        return user;
       }
       throw new AuthenticationError("You need to be logged in");
     },
@@ -39,9 +40,10 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { products }, context) => {
-      console.log(context);
+      // console.log(context);
       if (context.user) {
         const order = new Order({ products });
+        console.log(order);
 
         await User.findByIdAndUpdate(context.user._id, {
           $push: { orders: order },

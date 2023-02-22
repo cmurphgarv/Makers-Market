@@ -30,3 +30,9 @@ export const removeProductIdFromProductList = (productId) => {
 
   return true;
 };
+
+export const clearProductList = () => {
+  localStorage.setItem("productList", []);
+
+  return true;
+};
