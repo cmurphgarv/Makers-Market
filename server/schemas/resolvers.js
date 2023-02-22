@@ -26,6 +26,8 @@ const resolvers = {
           path: "orders.products",
           populate: "category",
         });
+
+        return user;
       }
       throw new AuthenticationError("You need to be logged in");
     },
