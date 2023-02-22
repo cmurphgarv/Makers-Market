@@ -10,8 +10,6 @@ import ProductsContext from "../utils/productsContext";
 const Cart = () => {
   const { productList, setProductList } = useContext(ProductsContext);
 
-  const productListLength = Object.keys(productList).length;
-
   const { loading, error, data } = useQuery(QUERY_ALL_PRODUCTS);
   const products = data?.products || [];
 
