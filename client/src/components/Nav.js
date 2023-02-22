@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
+import { getSavedProductList } from "../utils/localStorage";
 
 let loginButton;
 
@@ -22,6 +23,15 @@ if (Auth.loggedIn()) {
   );
 }
 
+let cartView;
+// console.log(getSavedProductList());
+
+    if(getSavedProductList().length > 0) {
+      cartView = `View Cart(${getSavedProductList().length})`
+    } else {
+      cartView = "View Cart"
+    }
+
 const Nav = () => {
   return (
     <div class="navcard">
@@ -37,7 +47,7 @@ const Nav = () => {
             <li>{loginButton}</li>
             <li>
               <Link to={`/cart`}>
-                <h5>View Cart</h5>
+                <h5>{cartView}</h5>
               </Link>
             </li>
           </ul>
