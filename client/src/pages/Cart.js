@@ -28,6 +28,7 @@ const Cart = () => {
     console.log(productId);
     removeProductIdFromProductList(productId);
     setProductList(getSavedProductList());
+    window.location.reload();
   };
 
   function Checkout() {
@@ -39,14 +40,19 @@ const Cart = () => {
   }
 
   if (loading) return "Loading...";
-
+  let checkoutb;
+  if (getSavedProductList().length > 0) {
+    checkoutb = (
+      <button class="checkoutButton" onClick={Checkout}>
+        Ready to Checkout
+      </button>
+    );
+  } else {
+    checkoutb = "";
+  }
   return (
     <div class="cart">
-      <div class="checkoutButton">
-        <button class="checkoutButton" onClick={Checkout}>
-          Ready to Checkout
-        </button>
-      </div>
+      <div class="checkoutButton">{checkoutb}</div>
       {getCartProducts().length ? (
         getCartProducts().map((product) => (
           <div class="cartdiv">
