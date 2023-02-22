@@ -2,7 +2,7 @@ import React from "react";
 
 const Order = ({ order }) => {
   let date1 = order.purchaseDate;
-  let date2 = new Date(+date1);
+  let date2 = Date(+date1);
   console.log(date2);
 
   return (
