@@ -279,7 +279,7 @@ form {
   border-radius: 1rem;
   border: none;
   outline: none;
-  cursor: pointer;
+
   margin: 0 1px;
   color: var(--light);
 }
