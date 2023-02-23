@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import ProductsContext from "../../utils/productsContext";
+import { getSavedProductList } from "../../utils/localStorage";
 import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
 
-const ProductItem = ({ name, image, price, _id }) => {
+const ProductItem = ({ name, image, price, _id, count, setCount }) => {
   const { productList, setProductList } = useContext(ProductsContext);
   const [buttonText, setButtonText] = useState("Add to Cart");
 
@@ -12,7 +13,7 @@ const ProductItem = ({ name, image, price, _id }) => {
   const handleProductList = () => {
     setProductList([...productList, _id]);
     setButtonText("Added To Your Cart!");
-    window.location.reload();
+    setCount(productList.length + 1);
   };
 
   let cartButton;

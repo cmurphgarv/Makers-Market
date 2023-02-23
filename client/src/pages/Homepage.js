@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../utils/queries";
 import ProductItem from "../components/ProductItem";
 
-const Homepage = () => {
+const Homepage = ({ count, setCount }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const { loading, error, data } = useQuery(QUERY_ALL_PRODUCTS);
@@ -55,6 +55,8 @@ const Homepage = () => {
               image={product.image}
               price={product.price}
               _id={product._id}
+              count={count}
+              setCount={setCount}
             />
           </div>
         ))}
