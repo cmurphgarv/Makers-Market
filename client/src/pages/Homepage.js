@@ -41,6 +41,7 @@ const Homepage = ({ count, setCount }) => {
           <option value="">All</option>
           <option value="2D">2D</option>
           <option value="3D">3D</option>
+          <option value="Prints">Prints</option>
           <option value="Jewelry">Jewelry</option>
           <option value="Misc">Misc</option>
         </select>

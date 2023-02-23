@@ -140,7 +140,7 @@ db.once("open", async () => {
     {
       name: "Charcoal Grey Magma Pot",
       category: categories[1]._id,
-      description: "Charcoal grey magma pot by Vincent Stemmler, 2022.",
+      description: "Charcoal grey magma vessel by Vincent Stemmler, 2022.",
       image: "image002.jpg",
       price: 50,
       quantity: 30,
@@ -148,9 +148,9 @@ db.once("open", async () => {
     {
       name: "Structured",
       category: categories[1]._id,
-      description: "Structured. Ceramic piece by Vincent Stemmler, 2020.",
+      description: "Structured. Ceramic sculpture by Vincent Stemmler, 2020.",
       image: "image001.jpg",
-      price: 100,
+      price: 200,
       quantity: 30,
     },
     {
@@ -158,14 +158,14 @@ db.once("open", async () => {
       category: categories[1]._id,
       description: "Mixed media sculpture by Vincent Stemmler, 2022.",
       image: "image003.jpg",
-      price: 200,
+      price: 300,
       quantity: 30,
     },
     {
       name: "Earrings",
       category: categories[2]._id,
       description:
-        "Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.",
+        "Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex.",
       image: "image0000.jpg",
       price: 75,
       quantity: 30,
@@ -174,7 +174,7 @@ db.once("open", async () => {
       name: "Necklace",
       category: categories[2]._id,
       description:
-        "Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.",
+        "Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex.",
       image: "image0001.jpg",
       price: 75,
       quantity: 30,
@@ -183,7 +183,7 @@ db.once("open", async () => {
       name: "Necklace #2",
       category: categories[2]._id,
       description:
-        "In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.",
+        "In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu.",
       image: "image0002.jpg",
       price: 120,
       quantity: 30,
@@ -317,10 +317,10 @@ db.once("open", async () => {
       quantity: 30,
     },
     {
-      name: "Copy of Local Publication",
+      name: "Local Publication",
       category: categories[4]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet.",
       image: "image000.jpg",
       price: 9.99,
       quantity: 200,
