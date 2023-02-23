@@ -10,7 +10,7 @@ import {
 } from "../utils/localStorage";
 import ProductsContext from "../utils/productsContext";
 
-const Cart = () => {
+const Cart = ({ setCount }) => {
   const { productList, setProductList } = useContext(ProductsContext);
 
   const { loading, error, data } = useQuery(QUERY_ALL_PRODUCTS);
@@ -32,6 +32,7 @@ const Cart = () => {
     console.log(productId);
     removeProductIdFromProductList(productId);
     setProductList(getSavedProductList());
+    setCount(productList.length - 1);
   };
 
   const checkout = async (productList) => {
