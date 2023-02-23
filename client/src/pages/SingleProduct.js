@@ -5,14 +5,16 @@ import { QUERY_PRODUCT } from "../utils/queries";
 import React, { useContext, useEffect, useState } from "react";
 import Auth from "../utils/auth";
 
-const SingleProduct = ({ setCount, _id }) => {
+const SingleProduct = ({ setCount }) => {
   const { productList, setProductList } = useContext(ProductsContext);
   const [buttonText, setButtonText] = useState("Add to Cart");
+
+  const { productId } = useParams();
 
   console.log(productList);
 
   const handleProductList = () => {
-    setProductList([...productList, _id]);
+    setProductList([...productList, productId]);
     setButtonText("Added To Your Cart!");
     setCount(productList.length + 1);
   };
@@ -24,7 +26,6 @@ const SingleProduct = ({ setCount, _id }) => {
   } else {
     cartButton = <p>Login to Add to Cart</p>;
   }
-  const { productId } = useParams();
 
   const { loading, data } = useQuery(QUERY_PRODUCT, {
     variables: { productId: productId },
