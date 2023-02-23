@@ -13,6 +13,7 @@ import { ProductsProvider } from "./utils/productsContext";
 import {
   getSavedProductList,
   addProductIdToProductList,
+  removeProductIdFromProductList,
 } from "./utils/localStorage";
 
 import Nav from "./components/Nav";
@@ -53,6 +54,7 @@ function App() {
 
   useEffect(() => {
     addProductIdToProductList(productList);
+    removeProductIdFromProductList(productList);
   });
 
   return (
@@ -69,7 +71,10 @@ function App() {
             <Route path="/login" element={<Login />} />
             {/* <Route path="/logout" element={<Logout />} /> */}
             <Route path="/products/:productId" element={<SingleProduct />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route
+              path="/cart"
+              element={<Cart count={count} setCount={setCount} />}
+            />
             <Route path="/history" element={<OrderHistory />} />
           </Routes>
         </Router>

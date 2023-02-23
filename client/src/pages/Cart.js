@@ -32,7 +32,6 @@ const Cart = () => {
     console.log(productId);
     removeProductIdFromProductList(productId);
     setProductList(getSavedProductList());
-    window.location.reload();
   };
 
   const checkout = async (productList) => {
