@@ -1,5 +1,5 @@
 :root {
-  --primary: #edd4fa;
+  --primary: #d6b9e5;
   --secondary: #98ceb5;
   --tertiary: #acdff7;
   --light: #fbfbfb;
@@ -214,7 +214,8 @@ input:focus {
   max-width: 18%;
 }
 .sp-description {
-  margin-left: 2vmax;
+  margin-left: 1vmax;
+
   justify-content: center;
   align-items: center;
 }
@@ -227,7 +228,7 @@ input:focus {
 .sp-container {
 }
 .spimage {
-  max-width: 60vh;
+  max-width: 50vh;
   display: block;
 }
 .sp-addprice {
@@ -235,6 +236,7 @@ input:focus {
   justify-content: center;
   align-items: center;
 }
+
 #categorylist {
   font-family: "DotGothic16";
   font-size: 1vmax;

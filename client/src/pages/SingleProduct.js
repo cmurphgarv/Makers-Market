@@ -1,10 +1,29 @@
 import { useQuery } from "@apollo/client";
-import React from "react";
-
+import ProductsContext from "../utils/productsContext";
 import { useParams } from "react-router-dom";
 import { QUERY_PRODUCT } from "../utils/queries";
+import React, { useContext, useEffect, useState } from "react";
+import Auth from "../utils/auth";
 
-const SingleProduct = () => {
+const SingleProduct = ({ setCount, _id }) => {
+  const { productList, setProductList } = useContext(ProductsContext);
+  const [buttonText, setButtonText] = useState("Add to Cart");
+
+  console.log(productList);
+
+  const handleProductList = () => {
+    setProductList([...productList, _id]);
+    setButtonText("Added To Your Cart!");
+    setCount(productList.length + 1);
+  };
+
+  let cartButton;
+
+  if (Auth.loggedIn()) {
+    cartButton = <button onClick={handleProductList}>{buttonText}</button>;
+  } else {
+    cartButton = <p>Login to Add to Cart</p>;
+  }
   const { productId } = useParams();
 
   const { loading, data } = useQuery(QUERY_PRODUCT, {
@@ -34,7 +53,7 @@ const SingleProduct = () => {
 
         <div className="sp-addprice">
           <h3>${product.price}</h3>
-          <button>Add to Cart</button>
+          {cartButton}
         </div>
       </div>
       <div className="sp-right-col">
