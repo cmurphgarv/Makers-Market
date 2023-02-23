@@ -49,6 +49,7 @@ const client = new ApolloClient({
 
 function App() {
   const [productList, setProductList] = useState(getSavedProductList());
+  const [count, setCount] = useState(getSavedProductList().length);
 
   useEffect(() => {
     addProductIdToProductList(productList);
@@ -58,10 +59,13 @@ function App() {
     <ApolloProvider client={client}>
       <ProductsProvider value={{ productList: productList, setProductList }}>
         <Router>
-          <Nav />
+          <Nav count={count} setCount={setCount} />
 
           <Routes>
-            <Route path="/" element={<Homepage />} />
+            <Route
+              path="/"
+              element={<Homepage count={count} setCount={setCount} />}
+            />
             <Route path="/login" element={<Login />} />
             {/* <Route path="/logout" element={<Logout />} /> */}
             <Route path="/products/:productId" element={<SingleProduct />} />
