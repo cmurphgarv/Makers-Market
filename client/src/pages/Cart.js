@@ -46,6 +46,7 @@ const Cart = () => {
     }
 
     clearProductList();
+
     let delay = 1000;
     setTimeout(function () {
       window.location.href = "/";
@@ -70,7 +71,9 @@ const Cart = () => {
       {getCartProducts().length ? (
         getCartProducts().map((product) => (
           <div class="cartdiv">
-            <img src={`/images/${product.image}`} />
+            <Link to={`/products/${product._id}`}>
+              <img src={`/images/${product.image}`} />
+            </Link>
             <br></br>
             <p>
               {" "}

@@ -21,7 +21,7 @@ import Cart from "./pages/Cart";
 import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import SingleProduct from "./pages/SingleProduct";
-import Logout from "./pages/Logout";
+
 import OrderHistory from "./pages/OrderHistory";
 
 // Construct our main GraphQL API endpoint
@@ -70,7 +70,10 @@ function App() {
             />
             <Route path="/login" element={<Login />} />
             {/* <Route path="/logout" element={<Logout />} /> */}
-            <Route path="/products/:productId" element={<SingleProduct />} />
+            <Route
+              path="/products/:productId"
+              element={<SingleProduct count={count} setCount={setCount} />}
+            />
             <Route
               path="/cart"
               element={<Cart count={count} setCount={setCount} />}

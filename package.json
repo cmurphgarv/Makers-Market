@@ -17,7 +17,9 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "jquery": "^3.6.3",
+    "toastr": "^2.1.4"
   },
   "engines": {
     "node": "16.18.0"
